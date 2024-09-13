@@ -1,0 +1,58 @@
+{
+  "tasks": [
+    {
+      "id": "1",
+      "title": "Title 1",
+      "description": "Description 1",
+      "creatorId": "1",
+      "performerId": "1",
+      "status": "todo",
+      "priority": "Low"
+    },
+    {
+      "id": "2",
+      "title": "Title 2",
+      "description": "Description 2",
+      "creatorId": "2",
+      "performerId": "2",
+      "status": "in_progress",
+      "priority": "Medium"
+    },
+    {
+      "id": "3",
+      "title": "Title 3",
+      "description": "Description 3",
+      "creatorId": "3",
+      "performerId": "3",
+      "status": "done",
+      "priority": "High"
+    },
+    {
+      "id": "4",
+      "title": "Title 4",
+      "description": "Description 4",
+      "creatorId": "4",
+      "performerId": "4",
+      "status": "todo",
+      "priority": "Critical"
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "name": "User 1"
+    },
+    {
+      "id": "2",
+      "name": "User 2"
+    },
+    {
+      "id": "3",
+      "name": "User 3"
+    },
+    {
+      "id": "4",
+      "name": "User 4"
+    }
+  ]
+}
