@@ -7,10 +7,10 @@ const defaultConfig = {
     size: 'md'
 };
 
-const config = {
+const config = computed(() => ({
     ...defaultConfig,
     ...props.config
-};
+}));
 </script>
 
 <template>

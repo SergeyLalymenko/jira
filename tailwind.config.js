@@ -17,6 +17,7 @@ module.exports = {
             colors: {
                 'text': '#fff',
                 'text-upper': '#1a1a1a',
+                'placeholder': '#808080',
                 'link': '#42b883',
                 'linkHighlight': '#42d392',
                 'background': '#1a1a1a',
@@ -31,7 +32,8 @@ module.exports = {
                 'border': '#fff',
                 'active': '#42b883',
                 'activeHighlight': '#42d392',
-                'danger': '#dc3545'
+                'danger': '#dc3545',
+                'danger-active': '#fc0c24'
             }
         }
     },

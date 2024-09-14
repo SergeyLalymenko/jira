@@ -60,5 +60,15 @@ const config = {
             border-color: $colorActive;
         }
     }
+
+    &.danger {
+        background: $colorDanger;
+        color: $colorText;
+        border-radius: 4px;
+
+        &:hover {
+            background: $colorDangerActive;
+        }
+    }
 }
 </style>
