@@ -145,6 +145,20 @@ function onSubmit(values) {
     openedTask.value = null;
     isEditMode.value = false;
 }
+
+function onDragStart(e, id) {
+    e.dataTransfer.setData('taskId', id);
+}
+
+function onDrop(e, status) {
+    const taskId = e.dataTransfer.getData('taskId');
+    const oldTask = tasksStore.tasks.find((task) => task.id === taskId);
+    const newTask = {
+        ...oldTask,
+        status
+    };
+    tasksStore.updateTask(taskId, newTask);
+}
 </script>
 
 <template>
@@ -155,6 +169,9 @@ function onSubmit(values) {
         >
             <div
                 v-for="(tasks, colStatus) in filteredTasksByStatus"
+                @drop="onDrop($event, colStatus)"
+                @dragover.prevent
+                @dragenter.prevent
                 class="border border-border border-solid rounded p-4"
             >
                 <h5 class="mb-4">
@@ -163,7 +180,9 @@ function onSubmit(values) {
                 <div
                     v-for="task in tasks"
                     @click="setOpenedTask(task)"
-                    class="flex items-start rounded bg-background-upper text-text-upper p-2 mt-2 shadow-inner shadow-background cursor-pointer"
+                    @dragstart="onDragStart($event, task.id)"
+                    draggable="true"
+                    class="flex items-start rounded bg-background-upper text-text-upper p-2 mt-2 cursor-pointer"
                 >
                     <h6 class="mr-4">
                         {{ task.title }}

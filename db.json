@@ -1,21 +1,12 @@
 {
   "tasks": [
     {
-      "title": "Title 1",
-      "description": "Description 1",
-      "creatorId": "1",
-      "performerId": "1",
-      "priority": "Low",
-      "status": "Todo",
-      "id": "1"
-    },
-    {
       "title": "Title 2",
       "description": "Description 2",
       "creatorId": "2",
       "performerId": "2",
       "priority": "Medium",
-      "status": "Done",
+      "status": "In Progress",
       "id": "2"
     },
     {
@@ -43,7 +34,7 @@
       "creatorId": "1",
       "performerId": "2",
       "priority": "High",
-      "status": "Todo"
+      "status": "Done"
     },
     {
       "title": "Hioii",
@@ -61,7 +52,7 @@
       "creatorId": "1",
       "performerId": "2",
       "priority": "Low",
-      "status": "Todo"
+      "status": "Done"
     },
     {
       "title": "dsgg",
@@ -78,8 +69,17 @@
       "creatorId": "4",
       "performerId": "4",
       "priority": "Critical",
-      "status": "Done",
+      "status": "In Progress",
       "id": "6a8e"
+    },
+    {
+      "title": "Hi",
+      "description": "Hi",
+      "creatorId": "1",
+      "performerId": "4",
+      "priority": "Medium",
+      "status": "In Progress",
+      "id": "ede8"
     }
   ],
   "users": [
