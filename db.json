@@ -6,17 +6,17 @@
       "creatorId": "1",
       "performerId": "1",
       "priority": "Low",
-      "status": "todo",
+      "status": "Todo",
       "id": "1"
     },
     {
-      "id": "2",
       "title": "Title 2",
       "description": "Description 2",
       "creatorId": "2",
       "performerId": "2",
       "priority": "Medium",
-      "status": "in_progress"
+      "status": "Done",
+      "id": "2"
     },
     {
       "id": "3",
@@ -25,7 +25,7 @@
       "creatorId": "3",
       "performerId": "3",
       "priority": "High",
-      "status": "done"
+      "status": "Done"
     },
     {
       "title": "Title 44",
@@ -33,7 +33,7 @@
       "creatorId": "4",
       "performerId": "4",
       "priority": "Low",
-      "status": "done",
+      "status": "Done",
       "id": "4"
     },
     {
@@ -43,7 +43,7 @@
       "creatorId": "1",
       "performerId": "2",
       "priority": "High",
-      "status": "todo"
+      "status": "Todo"
     },
     {
       "title": "Hioii",
@@ -51,17 +51,8 @@
       "creatorId": "1",
       "performerId": "2",
       "priority": "Critical",
-      "status": "in_progress",
+      "status": "Done",
       "id": "0a2f"
-    },
-    {
-      "id": "5ab6",
-      "title": "afs",
-      "description": "afs",
-      "creatorId": "3",
-      "performerId": "1",
-      "priority": "Medium",
-      "status": "todo"
     },
     {
       "id": "eaab",
@@ -70,16 +61,25 @@
       "creatorId": "1",
       "performerId": "2",
       "priority": "Low",
-      "status": "todo"
+      "status": "Todo"
     },
     {
-      "id": "4e59",
       "title": "dsgg",
       "description": "sad",
       "creatorId": "2",
       "performerId": "3",
       "priority": "Medium",
-      "status": "todo"
+      "status": "In Progress",
+      "id": "4e59"
+    },
+    {
+      "title": "Some title",
+      "description": "Desc",
+      "creatorId": "4",
+      "performerId": "4",
+      "priority": "Critical",
+      "status": "Done",
+      "id": "6a8e"
     }
   ],
   "users": [

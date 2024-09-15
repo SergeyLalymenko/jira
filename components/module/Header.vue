@@ -48,23 +48,10 @@ const configs = {
         size: 'sm'
     }
 };
-const priorityOptions = [
-    {
-        text: 'Low',
-        value: 'Low'
-    },
-    {
-        text: 'Medium',
-        value: 'Medium'
-    },
-    {
-        text: 'High',
-        value: 'High'
-    },    {
-        text: 'Critical',
-        value: 'Critical'
-    }
-];
+const priorityOptions = tasksStore.availablePriorities.map((priority) => ({
+    text: priority,
+    value: priority
+}));
 const schema = yup.object({
     title: yup.string().required('Required').max(64, 'Max 64 symbols'),
     description: yup.string().required('Required'),
@@ -89,7 +76,7 @@ function toggleModal() {
 function onSubmit(values, { resetForm }) {
     const newTask = {
         ...values,
-        status: 'todo'
+        status: 'Todo'
     };
 
     tasksStore.createTask(newTask);

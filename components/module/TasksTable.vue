@@ -68,37 +68,14 @@ const configs = {
         size: 'sm'
     }
 };
-const priorityOptions = [
-    {
-        text: 'Low',
-        value: 'Low'
-    },
-    {
-        text: 'Medium',
-        value: 'Medium'
-    },
-    {
-        text: 'High',
-        value: 'High'
-    },    {
-        text: 'Critical',
-        value: 'Critical'
-    }
-];
-const statusOptions = [
-    {
-        text: 'Todo',
-        value: 'todo'
-    },
-    {
-        text: 'In Progress',
-        value: 'in_progress'
-    },
-    {
-        text: 'Done',
-        value: 'done'
-    }
-];
+const priorityOptions = tasksStore.availablePriorities.map((priority) => ({
+    text: priority,
+    value: priority
+}));
+const statusOptions = tasksStore.availableStatuses.map((status) => ({
+    text: status,
+    value: status
+}));
 const schema = yup.object({
     title: yup.string().required('Required').max(64, 'Max 64 symbols'),
     description: yup.string().required('Required'),
@@ -125,7 +102,18 @@ const selectUserOptions = computed(() => {
 });
 
 const filteredTasksByStatus = computed(() => {
-    return groupBy(tasksStore.tasks, 'status');
+    const defaultTasks = tasksStore.availableStatuses.reduce((acc, status) => {
+        return {
+            ...acc,
+            [status]: []
+        }
+    }, {});
+    const groupedTasks = groupBy(tasksStore.tasks, 'status');
+    const filteredTasks = {
+        ...defaultTasks,
+        ...groupedTasks
+    };
+    return filteredTasks;
 });
 
 function groupBy(array, property) {
@@ -138,16 +126,6 @@ function groupBy(array, property) {
             [key]: [...curGroup, obj]
         };
     }, {});
-}
-
-function getStatusName(key) {
-    const names = {
-        todo: 'Todo',
-        in_progress: 'In Progress',
-        done: 'Done'
-    };
-
-    return names[key] || '';
 }
 
 function setOpenedTask(task = null) {
@@ -180,7 +158,7 @@ function onSubmit(values) {
                 class="border border-border border-solid rounded p-4"
             >
                 <h5 class="mb-4">
-                    {{ getStatusName(colStatus) }}
+                    {{ colStatus }}
                 </h5>
                 <div
                     v-for="task in tasks"
@@ -303,7 +281,7 @@ function onSubmit(values) {
             </p>
             <h6 class="mt-4">Status:</h6>
             <p class="mt-2 border border-solid border-border rounded p-2">
-                {{ getStatusName(openedTask.status) }}
+                {{ openedTask.status }}
             </p>
             <div class="flex justify-between mt-7">
                 <UIButton

@@ -10,6 +10,7 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@vee-validate/yup": "^4.13.2",
     "json-server": "^1.0.0-beta.2",
     "nuxt": "^3.13.0",
     "sass-embedded": "^1.78.0",
